@@ -1,0 +1,42 @@
+
+`	java:S112t"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112v"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112…"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112’"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112£"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112²"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112´"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112Ù"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112Û"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+J
+java:S37406"/Provide the parametrized type for this generic.(íı’­úÿÿÿÿ
+J
+java:S37409"/Provide the parametrized type for this generic.(Ú¢éÕùÿÿÿÿ
+J
+java:S3740<"/Provide the parametrized type for this generic.(àëç…úÿÿÿÿ
+J
+java:S3740?"/Provide the parametrized type for this generic.(ıø–»şÿÿÿÿ
+J
+java:S3740B"/Provide the parametrized type for this generic.(Èâ–úÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î
+G
+java:S1602M",Remove useless curly braces around statement(Ñ¡Õùÿÿÿÿ
+[
+java:S2147u"ECombine this catch with the one at line 115, which has the same body.(ıàÑÎ
+B
+java:S1602j",Remove useless curly braces around statement(ë¹¬
+d	java:S100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ·ô—
+d	java:S100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘š˜Œ
+i	java:S100¨"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û›è°ûÿÿÿÿ
+\
+java:S2147³"ECombine this catch with the one at line 177, which has the same body.(ıàÑÎ
+i	java:S100Á"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—¤ç§ùÿÿÿÿ
+K
+java:S1172Á"/Remove this unused method parameter "keyEvent".(—¤ç§ùÿÿÿÿ
+\
+java:S2147Ú"ECombine this catch with the one at line 216, which has the same body.(ıàÑÎ
+C
+java:S1602Í",Remove useless curly braces around statement(ë¹¬
+c	java:S100ß"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ÁËx
+H
+java:S1172ß"2Remove this unused method parameter "actionEvent".(¾ÁËx
