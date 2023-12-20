@@ -1,98 +1,102 @@
 
-`	java:S112?"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-`	java:S112r"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-`	java:S112t"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112ƒ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112¹"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112»"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112Ó"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112Õ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112ó"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112õ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+g	java:S112A"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8 ³õ¹Ç1
+g	java:S112t"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8 ³õ¹Ç1
+g	java:S112v"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¡³õ¹Ç1
+h	java:S112ƒ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¡³õ¹Ç1
+h	java:S112…"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¡³õ¹Ç1
+h	java:S112»"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¡³õ¹Ç1
+h	java:S112½"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¡³õ¹Ç1
+h	java:S112Õ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¡³õ¹Ç1
+h	java:S112×"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢³õ¹Ç1
+h	java:S112õ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢³õ¹Ç1
+h	java:S112÷"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¢³õ¹Ç1
 L
-java:S3740&"/Provide the parametrized type for this generic.(×Ñ«ï8Ä–ù¸Ç1
+java:S3740("/Provide the parametrized type for this generic.(×Ñ«ï8¢³õ¹Ç1
 L
-java:S3740'"/Provide the parametrized type for this generic.(¸õÖ±8Å–ù¸Ç1
+java:S3740)"/Provide the parametrized type for this generic.(¸õÖ±8¢³õ¹Ç1
 L
-java:S3740("/Provide the parametrized type for this generic.(·ŒÃÍ8Å–ù¸Ç1
+java:S3740*"/Provide the parametrized type for this generic.(·ŒÃÍ8¢³õ¹Ç1
 Q
-java:S3740)"/Provide the parametrized type for this generic.(ÕÍØ¤üÿÿÿÿ8Å–ù¸Ç1
+java:S3740+"/Provide the parametrized type for this generic.(ÕÍØ¤üÿÿÿÿ8¢³õ¹Ç1
 Q
-java:S3740/"/Provide the parametrized type for this generic.(ŒĞ¶Ñøÿÿÿÿ8Å–ù¸Ç1
+java:S37401"/Provide the parametrized type for this generic.(ŒĞ¶Ñøÿÿÿÿ8£³õ¹Ç1
 L
-java:S37400"/Provide the parametrized type for this generic.(èÁƒá8Æ–ù¸Ç1
+java:S37402"/Provide the parametrized type for this generic.(èÁƒá8£³õ¹Ç1
 L
-java:S37401"/Provide the parametrized type for this generic.(™¼…ÿ8Æ–ù¸Ç1
+java:S37403"/Provide the parametrized type for this generic.(™¼…ÿ8£³õ¹Ç1
 Q
-java:S37402"/Provide the parametrized type for this generic.(ê¦„÷üÿÿÿÿ8Æ–ù¸Ç1
+java:S37404"/Provide the parametrized type for this generic.(ê¦„÷üÿÿÿÿ8£³õ¹Ç1
 L
-java:S37403"/Provide the parametrized type for this generic.(»§²8Æ–ù¸Ç1
+java:S37405"/Provide the parametrized type for this generic.(»§²8£³õ¹Ç1
 L
-java:S3740l"/Provide the parametrized type for this generic.(Ÿœ•¨8Ç–ù¸Ç1
+java:S3740n"/Provide the parametrized type for this generic.(Ÿœ•¨8£³õ¹Ç1
 L
-java:S3740{"/Provide the parametrized type for this generic.(Ÿœ•¨8Ç–ù¸Ç1
+java:S3740}"/Provide the parametrized type for this generic.(Ÿœ•¨8£³õ¹Ç1
+|
+java:S2293¶"YReplace the type specification in this constructor call with the diamond operator ("<>").(¿äÛ’ùÿÿÿÿ8¥³õ¹Ç1
+m
+java:S1104'"PMake pane a static final constant or non-public and provide accessors if needed.(ç¢ıã8§³õ¹Ç1
+t
+java:S1104("WMake customerBox a static final constant or non-public and provide accessors if needed.(×Ñ«ï8§³õ¹Ç1
+p
+java:S1104)"SMake itemBox a static final constant or non-public and provide accessors if needed.(¸õÖ±8§³õ¹Ç1
+n
+java:S1104*"QMake cmbID a static final constant or non-public and provide accessors if needed.(·ŒÃÍ8§³õ¹Ç1
+y
+java:S1104+"WMake cmbItemCode a static final constant or non-public and provide accessors if needed.(ÕÍØ¤üÿÿÿÿ8§³õ¹Ç1
 u
-java:S2293´"YReplace the type specification in this constructor call with the diamond operator ("<>").(¿äÛ’ùÿÿÿÿ
-f
-java:S1104%"PMake pane a static final constant or non-public and provide accessors if needed.(ç¢ıã
-m
-java:S1104&"WMake customerBox a static final constant or non-public and provide accessors if needed.(×Ñ«ï
-i
-java:S1104'"SMake itemBox a static final constant or non-public and provide accessors if needed.(¸õÖ±
-g
-java:S1104("QMake cmbID a static final constant or non-public and provide accessors if needed.(·ŒÃÍ
+java:S1104,"SMake txtName a static final constant or non-public and provide accessors if needed.(¨äİìÿÿÿÿÿ8§³õ¹Ç1
+u
+java:S1104-"SMake txtDesc a static final constant or non-public and provide accessors if needed.(ÀĞÓ¿ûÿÿÿÿ8§³õ¹Ç1
+z
+java:S1104."XMake txtUnitPrice a static final constant or non-public and provide accessors if needed.(©›×Ğùÿÿÿÿ8¨³õ¹Ç1
+t
+java:S1104/"RMake txtQty a static final constant or non-public and provide accessors if needed.(„¬‘³øÿÿÿÿ8¨³õ¹Ç1
+w
+java:S11040"UMake tblOrders a static final constant or non-public and provide accessors if needed.(åìàüÿÿÿÿ8¨³õ¹Ç1
+u
+java:S11041"SMake colCode a static final constant or non-public and provide accessors if needed.(ŒĞ¶Ñøÿÿÿÿ8¨³õ¹Ç1
+p
+java:S11042"SMake colDesc a static final constant or non-public and provide accessors if needed.(èÁƒá8¨³õ¹Ç1
+o
+java:S11043"RMake colQty a static final constant or non-public and provide accessors if needed.(™¼…ÿ8¨³õ¹Ç1
+w
+java:S11044"UMake colAmount a static final constant or non-public and provide accessors if needed.(ê¦„÷üÿÿÿÿ8¨³õ¹Ç1
 r
-java:S1104)"WMake cmbItemCode a static final constant or non-public and provide accessors if needed.(ÕÍØ¤üÿÿÿÿ
-n
-java:S1104*"SMake txtName a static final constant or non-public and provide accessors if needed.(¨äİìÿÿÿÿÿ
-n
-java:S1104+"SMake txtDesc a static final constant or non-public and provide accessors if needed.(ÀĞÓ¿ûÿÿÿÿ
-s
-java:S1104,"XMake txtUnitPrice a static final constant or non-public and provide accessors if needed.(©›×Ğùÿÿÿÿ
-m
-java:S1104-"RMake txtQty a static final constant or non-public and provide accessors if needed.(„¬‘³øÿÿÿÿ
-p
-java:S1104."UMake tblOrders a static final constant or non-public and provide accessors if needed.(åìàüÿÿÿÿ
-n
-java:S1104/"SMake colCode a static final constant or non-public and provide accessors if needed.(ŒĞ¶Ñøÿÿÿÿ
-i
-java:S11040"SMake colDesc a static final constant or non-public and provide accessors if needed.(èÁƒá
-h
-java:S11041"RMake colQty a static final constant or non-public and provide accessors if needed.(™¼…ÿ
-p
-java:S11042"UMake colAmount a static final constant or non-public and provide accessors if needed.(ê¦„÷üÿÿÿÿ
-k
-java:S11043"UMake colOption a static final constant or non-public and provide accessors if needed.(»§²
-j
-java:S11044"TMake lblTotal a static final constant or non-public and provide accessors if needed.(ÿêìˆ
+java:S11045"UMake colOption a static final constant or non-public and provide accessors if needed.(»§²8¨³õ¹Ç1
 q
-java:S11045"VMake lblOrderId a static final constant or non-public and provide accessors if needed.(¢–ñ¯ıÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î
-h	java:S1008"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë›¿íıÿÿÿÿ
-M
-java:S11728"2Remove this unused method parameter "actionEvent".(Ë›¿íıÿÿÿÿ
-[
-java:S2147s"ECombine this catch with the one at line 113, which has the same body.(ıàÑÎ
-\
-java:S2147‚"ECombine this catch with the one at line 128, which has the same body.(ıàÑÎ
-i
-java:S3776‡"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(²Ï¦Ş
-I
-java:S1172‡"2Remove this unused method parameter "actionEvent".(²Ï¦Ş
-\
-java:S2147º"ECombine this catch with the one at line 184, which has the same body.(ıàÑÎ
-\
-java:S2147Ô"ECombine this catch with the one at line 210, which has the same body.(ıàÑÎ
-L
-java:S6397Ì"5Replace this character class by the character itself.(à‡·¬
-I
-java:S1172Ù"2Remove this unused method parameter "actionEvent".(÷´¤ù
-\
-java:S2147ô"ECombine this catch with the one at line 242, which has the same body.(ıàÑÎ
-_
-java:S3986è"HMake sure that week Year "YYYY" is expected here instead of Year "yyyy".(¦Ğ£¨
-A
-java:S10686"+Remove this unused "dtoList" private field.(ñºùÆ
-L
-java:S1144À"0Remove this unused private "clearFeilds" method.(¢›æ×üÿÿÿÿ
+java:S11046"TMake lblTotal a static final constant or non-public and provide accessors if needed.(ÿêìˆ8¨³õ¹Ç1
+x
+java:S11047"VMake lblOrderId a static final constant or non-public and provide accessors if needed.(¢–ñ¯ıÿÿÿÿ8¨³õ¹Ç1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8«³õ¹Ç1
+o	java:S100:"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë›¿íıÿÿÿÿ8´õ¹Ç1
+T
+java:S1172:"2Remove this unused method parameter "actionEvent".(Ë›¿íıÿÿÿÿ8‘´õ¹Ç1
+b
+java:S2147u"ECombine this catch with the one at line 115, which has the same body.(ıàÑÎ8¨´õ¹Ç1
+c
+java:S2147„"ECombine this catch with the one at line 130, which has the same body.(ıàÑÎ8«´õ¹Ç1
+p
+java:S3776‰"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(²Ï¦Ş8¯´õ¹Ç1
+P
+java:S1172‰"2Remove this unused method parameter "actionEvent".(²Ï¦Ş8°´õ¹Ç1
+c
+java:S2147¼"ECombine this catch with the one at line 186, which has the same body.(ıàÑÎ8´´õ¹Ç1
+c
+java:S2147Ö"ECombine this catch with the one at line 212, which has the same body.(ıàÑÎ8Ã´õ¹Ç1
+S
+java:S6397Î"5Replace this character class by the character itself.(à‡·¬8Ù´õ¹Ç1
+P
+java:S1172Û"2Remove this unused method parameter "actionEvent".(÷´¤ù8Ş´õ¹Ç1
+c
+java:S2147ö"ECombine this catch with the one at line 244, which has the same body.(ıàÑÎ8à´õ¹Ç1
+f
+java:S3986ê"HMake sure that week Year "YYYY" is expected here instead of Year "yyyy".(¦Ğ£¨8ä´õ¹Ç1
+U
+java:S1128"3Remove this unused import 'dao.custom.CustomerDao'.(‰‡¬«úÿÿÿÿ8¨¾È1
+Y
+java:S1128"<Remove this unused import 'dao.custom.impl.CustomerDaoImpl'.(á·Ì‰8¨¾È1
+H
+java:S10688"+Remove this unused "dtoList" private field.(ñºùÆ8é´õ¹Ç1
+S
+java:S1144Â"0Remove this unused private "clearFeilds" method.(¢›æ×üÿÿÿÿ8é´õ¹Ç1

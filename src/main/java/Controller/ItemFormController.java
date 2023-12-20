@@ -20,8 +20,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import dto.tm.ItemTm;
-import dao.ItemModel;
-import dao.impl.ItemModelimpl;
+import dao.custom.ItemDao;
+import dao.custom.impl.ItemModelimpl;
 
 import java.io.IOException;
 import java.sql.*;
@@ -64,7 +64,7 @@ public class ItemFormController {
 
     @FXML
     private TreeTableColumn colOption;
-    private ItemModel itemModel = new ItemModelimpl();
+    private ItemDao itemDao = new ItemModelimpl();
 
     public void initialize(){
         colCode.setCellValueFactory(new TreeItemPropertyValueFactory<>("code"));
@@ -93,7 +93,7 @@ public class ItemFormController {
         ObservableList<ItemTm> tmList = FXCollections.observableArrayList();
 
         try {
-            List<ItemDto> itemList = itemModel.allItems();
+            List<ItemDto> itemList = itemDao.allItems();
             for (ItemDto dto : itemList){
                 JFXButton btn = new JFXButton("Delete");
                 ItemTm tm = new ItemTm(
@@ -121,7 +121,7 @@ public class ItemFormController {
 
     private void deleteItem(String code) {
         try {
-            boolean isDeleted = itemModel.deleteItem(code);
+            boolean isDeleted = itemDao.deleteItem(code);
             if (isDeleted) {
                 new Alert(Alert.AlertType.INFORMATION,"Item Deleted!").show();
                 loadItemTable();
@@ -151,7 +151,7 @@ public class ItemFormController {
     void SaveButtonOnAction(ActionEvent event) {
         ItemDto c = new ItemDto(txtCode.getText(),txtDesc.getText(),Double.parseDouble(txtPrice.getText()), Integer.parseInt(txtQty.getText()));
         try {
-            boolean isSaved = itemModel.saveItem(c);
+            boolean isSaved = itemDao.saveItem(c);
             if (isSaved){
                 new Alert(Alert.AlertType.INFORMATION,"Item Saved!").show();
                 loadItemTable();
@@ -168,7 +168,7 @@ public class ItemFormController {
     void UpdateButtonOnAction(ActionEvent event) {
         ItemDto dto = new ItemDto(txtCode.getText(),txtDesc.getText(),Double.parseDouble(txtPrice.getText()),Integer.parseInt(txtQty.getText()));
         try {
-            boolean isUpdated = itemModel.updateItem(dto);
+            boolean isUpdated = itemDao.updateItem(dto);
             if(isUpdated){
                 new Alert(Alert.AlertType.INFORMATION,"Customer Updated!").show();
                 loadItemTable();
@@ -193,7 +193,7 @@ public class ItemFormController {
     public void SearchOnAction(KeyEvent keyEvent) {
         ObservableList<ItemTm> tmList = FXCollections.observableArrayList();
         try {
-            List<ItemDto> dtoList = itemModel.searchItem(txtSearch.getText());
+            List<ItemDto> dtoList = itemDao.searchItem(txtSearch.getText());
             for(ItemDto dto:dtoList){
                 JFXButton btn = new JFXButton("DELETE");
                 ItemTm tm = new ItemTm(dto.getCode(),

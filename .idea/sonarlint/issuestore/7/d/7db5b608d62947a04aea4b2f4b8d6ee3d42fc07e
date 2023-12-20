@@ -1,42 +1,44 @@
 
-`	java:S112t"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-`	java:S112v"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112…"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112’"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112£"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112²"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112´"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112Ù"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-a	java:S112Û"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+g	java:S112t"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8—ş¹Ç1
+g	java:S112v"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8—ş¹Ç1
+h	java:S112…"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8—ş¹Ç1
+h	java:S112’"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8—ş¹Ç1
+h	java:S112£"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8—ş¹Ç1
+h	java:S112²"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8˜ş¹Ç1
+h	java:S112´"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8˜ş¹Ç1
+h	java:S112Ù"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8˜ş¹Ç1
+h	java:S112Û"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8˜ş¹Ç1
+Q
+java:S37406"/Provide the parametrized type for this generic.(íı’­úÿÿÿÿ8˜ş¹Ç1
+Q
+java:S37409"/Provide the parametrized type for this generic.(Ú¢éÕùÿÿÿÿ8˜ş¹Ç1
+Q
+java:S3740<"/Provide the parametrized type for this generic.(àëç…úÿÿÿÿ8™ş¹Ç1
+Q
+java:S3740?"/Provide the parametrized type for this generic.(ıø–»şÿÿÿÿ8™ş¹Ç1
+Q
+java:S3740B"/Provide the parametrized type for this generic.(Èâ–úÿÿÿÿ8™ş¹Ç1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8œş¹Ç1
+a
+java:S2583Õ"DChange this condition so that it does not always evaluate to "false"(ÏÍœD8×–¾È1
+N
+java:S1602M",Remove useless curly braces around statement(Ñ¡Õùÿÿÿÿ8Õş¹Ç1
+b
+java:S2147u"ECombine this catch with the one at line 115, which has the same body.(ıàÑÎ8Úş¹Ç1
+I
+java:S1602j",Remove useless curly braces around statement(ë¹¬8İş¹Ç1
+k	java:S100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ·ô—8äş¹Ç1
+k	java:S100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘š˜Œ8îş¹Ç1
+p	java:S100¨"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û›è°ûÿÿÿÿ8òş¹Ç1
+c
+java:S2147³"ECombine this catch with the one at line 177, which has the same body.(ıàÑÎ8õş¹Ç1
+p	java:S100Á"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—¤ç§ùÿÿÿÿ8øş¹Ç1
+R
+java:S1172Á"/Remove this unused method parameter "keyEvent".(—¤ç§ùÿÿÿÿ8ùş¹Ç1
+c
+java:S2147Ú"ECombine this catch with the one at line 216, which has the same body.(ıàÑÎ8ùş¹Ç1
 J
-java:S37406"/Provide the parametrized type for this generic.(íı’­úÿÿÿÿ
-J
-java:S37409"/Provide the parametrized type for this generic.(Ú¢éÕùÿÿÿÿ
-J
-java:S3740<"/Provide the parametrized type for this generic.(àëç…úÿÿÿÿ
-J
-java:S3740?"/Provide the parametrized type for this generic.(ıø–»şÿÿÿÿ
-J
-java:S3740B"/Provide the parametrized type for this generic.(Èâ–úÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î
-G
-java:S1602M",Remove useless curly braces around statement(Ñ¡Õùÿÿÿÿ
-[
-java:S2147u"ECombine this catch with the one at line 115, which has the same body.(ıàÑÎ
-B
-java:S1602j",Remove useless curly braces around statement(ë¹¬
-d	java:S100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ·ô—
-d	java:S100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘š˜Œ
-i	java:S100¨"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û›è°ûÿÿÿÿ
-\
-java:S2147³"ECombine this catch with the one at line 177, which has the same body.(ıàÑÎ
-i	java:S100Á"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—¤ç§ùÿÿÿÿ
-K
-java:S1172Á"/Remove this unused method parameter "keyEvent".(—¤ç§ùÿÿÿÿ
-\
-java:S2147Ú"ECombine this catch with the one at line 216, which has the same body.(ıàÑÎ
-C
-java:S1602Í",Remove useless curly braces around statement(ë¹¬
-c	java:S100ß"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ÁËx
-H
-java:S1172ß"2Remove this unused method parameter "actionEvent".(¾ÁËx
+java:S1602Í",Remove useless curly braces around statement(ë¹¬8ûş¹Ç1
+j	java:S100ß"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ÁËx8ış¹Ç1
+O
+java:S1172ß"2Remove this unused method parameter "actionEvent".(¾ÁËx8şş¹Ç1

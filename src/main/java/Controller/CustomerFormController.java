@@ -1,7 +1,10 @@
 package Controller;
 
+import bo.custom.CustomerBo;
+import bo.custom.impl.CustomerBoImpl;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import dao.custom.CustomerDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,8 +19,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import dto.CustomerDto;
 import dto.tm.CustomerTm;
-import dao.CustomerModel;
-import dao.impl.CustomerModelImpl;
+import dao.custom.impl.CustomerDaoImpl;
 
 import java.io.IOException;
 import java.sql.*;
@@ -56,13 +58,14 @@ public class CustomerFormController {
     @FXML
     private TableColumn colOption;
 
-    private CustomerModel customerModel = new CustomerModelImpl();
+    private CustomerBo<CustomerDto> customerBo= new CustomerBoImpl() {
+    };
 
     public void loadCustomerTable(){
         ObservableList<CustomerTm> tmList = FXCollections.observableArrayList();
 
         try {
-            List<CustomerDto> dtoList = customerModel.allCustomers();
+            List<CustomerDto> dtoList = customerBo.allCustomers();
 
             for(CustomerDto dto:dtoList){
                 JFXButton btn = new JFXButton("Delete");
@@ -86,7 +89,7 @@ public class CustomerFormController {
     private void deleteCustomer(String id) {
 
         try {
-            boolean isDeleted = customerModel.deleteCustomer(id);
+            boolean isDeleted = customerBo.deleteCustomer(id);
             if (isDeleted) {
                 new Alert(Alert.AlertType.INFORMATION,"Customer Deleted!").show();
                 loadCustomerTable();
@@ -100,7 +103,7 @@ public class CustomerFormController {
 
     public void saveButtonOnAction(ActionEvent actionEvent) {
         try {
-            boolean isSaved = customerModel.saveCustomer(new CustomerDto(txtID.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText())));
+            boolean isSaved = customerBo.saveCustomer(new CustomerDto(txtID.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText())));
             if (isSaved){
                 new Alert(Alert.AlertType.INFORMATION,"Customer Saved!").show();
                 loadCustomerTable();
@@ -130,7 +133,7 @@ public class CustomerFormController {
 
     public void updateButtonOnAction(ActionEvent actionEvent) {
         try {
-            boolean isUpdated = customerModel.updateCustomer(new CustomerDto(txtID.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText())));
+            boolean isUpdated = customerBo.updateCustomer(new CustomerDto(txtID.getText(), txtName.getText(), txtAddress.getText(), Double.parseDouble(txtSalary.getText())));
             if (isUpdated) {
                 new Alert(Alert.AlertType.INFORMATION,"Customer Updated!").show();
                 loadCustomerTable();
@@ -179,7 +182,7 @@ public class CustomerFormController {
         ObservableList<CustomerTm> tmList = FXCollections.observableArrayList();
 
         try {
-            List<CustomerDto> dtoList = customerModel.searchCustomer(txtSearch.getText());
+            List<CustomerDto> dtoList = customerBo.searchCustomer(txtSearch.getText());
             for (CustomerDto dto : dtoList){
                 JFXButton btn = new JFXButton("Delete");
                 CustomerTm c  = new CustomerTm(dto.getId(),
