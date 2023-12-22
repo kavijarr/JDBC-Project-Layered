@@ -1,12 +1,14 @@
 package Controller;
 
+import bo.BoFactory;
 import bo.custom.CustomerBo;
-import bo.custom.impl.CustomerBoImpl;
+import bo.custom.ItemBo;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import dao.util.BoType;
 import dto.CustomerDto;
 import dto.ItemDto;
 import dto.OrderDetailsDto;
@@ -21,12 +23,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import dao.custom.CustomerDao;
-import dao.custom.ItemDao;
 import dao.custom.OrderDao;
-import dao.custom.impl.CustomerDaoImpl;
-import dao.custom.impl.ItemModelimpl;
-import dao.custom.impl.OrderModelimpl;
+import dao.custom.impl.OrderDaoimpl;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -69,9 +67,9 @@ public class PlaceOrderFormController {
     private List<CustomerDto> customers = new ArrayList<>();
     private List<ItemDto> items = new ArrayList<>();
 
-    private CustomerBo customerBo= new CustomerBoImpl();
-    private ItemDao itemDao = new ItemModelimpl();
-    private OrderDao orderDao = new OrderModelimpl();
+    private CustomerBo customerBo= BoFactory.getInstance().getBo(BoType.CUSTOMER);
+    private ItemBo itemBo = BoFactory.getInstance().getBo(BoType.ITEM);
+    private OrderDao orderDao = new OrderDaoimpl();
     private ObservableList<OrderTm> tmList = FXCollections.observableArrayList();
     private double total=0;
     public void initialize(){
@@ -106,7 +104,7 @@ public class PlaceOrderFormController {
 
     private void loadItemCodes() {
         try {
-            items = itemDao.allItems();
+            items = itemBo.allItems();
             ObservableList list = FXCollections.observableArrayList();
             for (ItemDto dto: items) {
                 list.add(dto.getCode());
@@ -145,7 +143,7 @@ public class PlaceOrderFormController {
             new Alert(Alert.AlertType.ERROR, "Item Not In Stock").show();
         } else {
             try {
-                double amount = itemDao.getItem(cmbItemCode.getValue().toString()).getUnitPrice() * Integer.parseInt(txtQty.getText());
+                double amount = itemBo.getItem(cmbItemCode.getValue().toString()).getUnitPrice() * Integer.parseInt(txtQty.getText());
                 JFXButton btn = new JFXButton("Delete");
                 OrderTm tm = new OrderTm(
                         cmbItemCode.getValue().toString(),

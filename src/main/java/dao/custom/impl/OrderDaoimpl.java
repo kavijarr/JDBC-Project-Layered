@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class OrderModelimpl implements OrderDao {
+public class OrderDaoimpl implements OrderDao {
 
     OrderDetailsDao orderDetailsDao = new OrderDetailsModelimpl();
     @Override

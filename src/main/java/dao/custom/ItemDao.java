@@ -1,15 +1,16 @@
 package dao.custom;
 
 import dto.ItemDto;
+import entity.Item;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface ItemDao {
-   List<ItemDto> allItems() throws SQLException, ClassNotFoundException;
+public interface ItemDao  {
+   List<Item> allItems() throws SQLException, ClassNotFoundException;
    boolean deleteItem(String code) throws SQLException, ClassNotFoundException;
-   boolean saveItem(ItemDto dto) throws SQLException, ClassNotFoundException;
-   boolean updateItem(ItemDto dto) throws SQLException, ClassNotFoundException;
-   List<ItemDto> searchItem(String code) throws SQLException, ClassNotFoundException;
-   ItemDto getItem(String code) throws SQLException, ClassNotFoundException;
+   boolean saveItem(Item entity) throws SQLException, ClassNotFoundException;
+   boolean updateItem(Item entity) throws SQLException, ClassNotFoundException;
+   List<Item> searchItem(String code) throws SQLException, ClassNotFoundException;
+   Item getItem(String code) throws SQLException, ClassNotFoundException;
 }
