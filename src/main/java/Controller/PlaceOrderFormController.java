@@ -69,7 +69,7 @@ public class PlaceOrderFormController {
     private List<CustomerDto> customers = new ArrayList<>();
     private List<ItemDto> items = new ArrayList<>();
 
-    private CustomerBo<CustomerDto> customerBo= new CustomerBoImpl();
+    private CustomerBo customerBo= new CustomerBoImpl();
     private ItemDao itemDao = new ItemModelimpl();
     private OrderDao orderDao = new OrderModelimpl();
     private ObservableList<OrderTm> tmList = FXCollections.observableArrayList();
