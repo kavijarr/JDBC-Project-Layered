@@ -1,11 +1,17 @@
 package dao.custom.impl;
 
+import dao.util.CrudUtil;
+import dao.util.DaoFactory;
+import dao.util.DaoType;
 import db.DBConection;
 import dto.ItemDto;
 import dto.OrderDetailsDto;
 import dto.Orderdto;
 import dao.custom.OrderDetailsDao;
 import dao.custom.OrderDao;
+import entity.Item;
+import entity.OrderDetail;
+import entity.Orders;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,20 +21,20 @@ import java.util.List;
 
 public class OrderDaoimpl implements OrderDao {
 
-    OrderDetailsDao orderDetailsDao = new OrderDetailsModelimpl();
+    OrderDetailsDao orderDetailsDao = DaoFactory.getInstance().getDao(DaoType.ORDER_DETAIL);
     @Override
-    public boolean saveOrder(Orderdto dto) throws SQLException {
+    public boolean saveOrder(Orders entity) throws SQLException {
         Connection connection=null;
         try {
             connection = DBConection.getInstance().getConnection();
             connection.setAutoCommit(false);
             String sql = "INSERT INTO orders VALUES(?,?,?)";
             PreparedStatement pstm = connection.prepareStatement(sql);
-            pstm.setString(1, dto.getOrderId());
-            pstm.setString(2, dto.getDate());
-            pstm.setString(3, dto.getCustId());
+            pstm.setString(1, entity.getOrderId());
+            pstm.setString(2, entity.getDate());
+            pstm.setString(3, entity.getCustomerId());
             if (pstm.executeUpdate() > 0) {
-                boolean isDetailSaved = orderDetailsDao.saveOrderDetails(dto.getList());
+                boolean isDetailSaved = orderDetailsDao.saveOrderDetails(entity.getList());
                 if (isDetailSaved) {
                     connection.commit();
                     return true;
@@ -43,13 +49,14 @@ public class OrderDaoimpl implements OrderDao {
     }
 
     @Override
-    public Orderdto lastOrder() throws SQLException, ClassNotFoundException {
+    public Orders lastOrder() throws SQLException, ClassNotFoundException {
         String sql = "SELECT * FROM orders ORDER BY id DESC LIMIT 1";
-        PreparedStatement pstm = DBConection.getInstance().getConnection().prepareStatement(sql);
-        ResultSet resultSet = pstm.executeQuery();
+//        PreparedStatement pstm = DBConection.getInstance().getConnection().prepareStatement(sql);
+//        ResultSet resultSet = pstm.executeQuery();
+        ResultSet resultSet = CrudUtil.execute(sql);
 
         if(resultSet.next()){
-            return new Orderdto(
+            return new Orders(
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
@@ -60,14 +67,14 @@ public class OrderDaoimpl implements OrderDao {
     }
 
     @Override
-    public boolean removeFromStock(List<OrderDetailsDto> orders,List<ItemDto> itemList) throws SQLException, ClassNotFoundException {
+    public boolean removeFromStock(List<OrderDetail> orders, List<Item> itemList) throws SQLException, ClassNotFoundException {
         String sql = "UPDATE item SET qtyOnHand =? WHERE code =?";
 
         PreparedStatement pstm = DBConection.getInstance().getConnection().prepareStatement(sql);
-            for (OrderDetailsDto order:orders) {
-                for (ItemDto item:itemList) {
+            for (OrderDetail order:orders) {
+                for (Item item:itemList) {
                     if (order.getItemCode().equals(item.getCode())){
-                        pstm.setInt(1,(item.getQty()-order.getQty()));
+                        pstm.setInt(1,(item.getQtyOnHand()-order.getQty()));
                         pstm.setString(2,order.getItemCode());
                         pstm.executeUpdate();
                     }

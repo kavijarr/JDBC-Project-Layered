@@ -63,29 +63,35 @@ public class ItemDaoImpl implements ItemDao {
 
     @Override
     public List<Item> searchItem(String code) throws SQLException, ClassNotFoundException {
-        List<Item>lList = new ArrayList<>();
+        List<Item>list = new ArrayList<>();
         String sql = "SELECT * FROM item WHERE code LIKE ? '%'";
 //        PreparedStatement pstm = DBConection.getInstance().getConnection().prepareStatement(sql);
 //        pstm.setString(1,code);
 //        ResultSet rslt = pstm.executeQuery();
-        return CrudUtil.search(sql,code);
+        ResultSet rslt = CrudUtil.search(sql, code);
+        while (rslt.next()){
+            list.add(new Item(rslt.getString(1),
+                    rslt.getString(2),
+                    rslt.getDouble(3),
+                    rslt.getInt(4)));
+        }
+        return list;
     }
 
     @Override
     public Item getItem(String code) throws SQLException, ClassNotFoundException {
         String sql = "SELECT * FROM item WHERE code=?";
         PreparedStatement pstm = DBConection.getInstance().getConnection().prepareStatement(sql);
-//        pstm.setString(1,code);
-//        ResultSet resultSet = pstm.executeQuery();
-//        if(resultSet.next()){
-//            return new ItemDto(
-//            resultSet.getString(1),
-//            resultSet.getString(2),
-//            resultSet.getDouble(3),
-//            resultSet.getInt(4)
-//            );
-        Item entity = CrudUtil.execute(sql,code);
-
-        return entity;
+        pstm.setString(1, code);
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()) {
+            return new Item(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getDouble(3),
+                    resultSet.getInt(4)
+            );
+        }
+        return null;
     }
 }

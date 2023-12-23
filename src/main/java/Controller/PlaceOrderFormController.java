@@ -3,6 +3,7 @@ package Controller;
 import bo.BoFactory;
 import bo.custom.CustomerBo;
 import bo.custom.ItemBo;
+import bo.custom.OrderBo;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableView;
@@ -69,7 +70,7 @@ public class PlaceOrderFormController {
 
     private CustomerBo customerBo= BoFactory.getInstance().getBo(BoType.CUSTOMER);
     private ItemBo itemBo = BoFactory.getInstance().getBo(BoType.ITEM);
-    private OrderDao orderDao = new OrderDaoimpl();
+    private OrderBo orderBo = BoFactory.getInstance().getBo(BoType.ORDER);
     private ObservableList<OrderTm> tmList = FXCollections.observableArrayList();
     private double total=0;
     public void initialize(){
@@ -198,7 +199,7 @@ public class PlaceOrderFormController {
 
     public void genarateID(){
         try {
-            Orderdto dto = orderDao.lastOrder();
+            Orderdto dto = orderBo.lastOrder();
             if(dto!=null) {
                 String id = dto.getOrderId();
                 int num = Integer.parseInt(id.split("[D]")[1]);
@@ -227,13 +228,13 @@ public class PlaceOrderFormController {
         if (!tmList.isEmpty()){
             boolean isSaved = false;
             try {
-                isSaved = orderDao.saveOrder(new Orderdto(
+                isSaved = orderBo.saveOrder(new Orderdto(
                         lblOrderId.getText(),
                         LocalDateTime.now().format(DateTimeFormatter.ofPattern("YYYY-MM-dd")),
                         cmbID.getValue().toString(),
                         list
                 ));
-                orderDao.removeFromStock(list,items);
+                orderBo.removeFromStock(list,items);
                 if (isSaved){
                     new Alert(Alert.AlertType.INFORMATION,"Order Saved!").show();
                 }else {
