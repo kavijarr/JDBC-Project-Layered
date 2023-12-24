@@ -226,7 +226,7 @@ public class PlaceOrderFormController {
                         cmbID.getValue().toString(),
                         list
                 ));
-                orderBo.removeFromStock(list,items);
+//                orderBo.removeFromStock(list,items);
                 if (isSaved){
                     new Alert(Alert.AlertType.INFORMATION,"Order Saved!").show();
                 }else {

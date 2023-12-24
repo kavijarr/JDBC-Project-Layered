@@ -44,29 +44,29 @@ public class OrderBoImpl implements OrderBo {
         return orderDao.save(dto);
     }
 
-    @Override
-    public Boolean removeFromStock(List<OrderDetailsDto> detailsList, List<ItemDto> itemList) throws SQLException, ClassNotFoundException {
-
-        List<OrderDetail>orderDetailsEntity=new ArrayList();
-        List<Item>itemEntity=new ArrayList();
-        for(OrderDetailsDto dto:detailsList){
-            orderDetailsEntity.add(new OrderDetail(
-                    dto.getOrderID(),
-                    dto.getItemCode(),
-                    dto.getQty(),
-                    dto.getUnitPrice()
-            ));
-        }
-
-        for (ItemDto dto:itemList){
-            itemEntity.add(new Item(
-                    dto.getCode(),
-                    dto.getDesc(),
-                    dto.getUnitPrice(),
-                    dto.getQty()
-            ));
-        }
-
-        return orderDao.removeFromStock(orderDetailsEntity,itemEntity);
-    }
+//    @Override
+//    public Boolean removeFromStock(List<OrderDetailsDto> detailsList, List<ItemDto> itemList) throws SQLException, ClassNotFoundException {
+//
+//        List<OrderDetail>orderDetailsEntity=new ArrayList();
+//        List<Item>itemEntity=new ArrayList();
+//        for(OrderDetailsDto dto:detailsList){
+//            orderDetailsEntity.add(new OrderDetail(
+//                    dto.getOrderID(),
+//                    dto.getItemCode(),
+//                    dto.getQty(),
+//                    dto.getUnitPrice()
+//            ));
+////        }
+//
+//        for (ItemDto dto:itemList){
+//            itemEntity.add(new Item(
+//                    dto.getCode(),
+//                    dto.getDesc(),
+//                    dto.getUnitPrice(),
+//                    dto.getQty()
+//            ));
+//        }
+//
+//        return orderDao.removeFromStock(orderDetailsEntity,itemEntity);
+//    }
 }

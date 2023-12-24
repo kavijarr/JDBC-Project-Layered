@@ -3,15 +3,30 @@ package entity;
 import dto.OrderDetailsDto;
 import lombok.*;
 
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Setter
 @Getter
 @ToString
+@Entity
 public class Orders {
+    @Id
     private String orderId;
     private String date;
-    private String customerId;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_Id",nullable = false)
+    private Customer customer;
+
+    @OneToMany(mappedBy = "order")
+    List<OrderDetail> orderDetailList = new ArrayList<>();
+
+    public Orders(String orderId, String date, String customerId) {
+        this.orderId = orderId;
+        this.date = date;
+    }
 }

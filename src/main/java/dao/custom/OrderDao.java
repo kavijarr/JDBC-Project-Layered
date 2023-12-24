@@ -16,7 +16,7 @@ public interface OrderDao extends CrudDao<Orderdto> {
 
     Orderdto lastOrder() throws SQLException, ClassNotFoundException;
 
-    boolean removeFromStock(List<OrderDetail> orders, List<Item> itemList) throws SQLException, ClassNotFoundException;
+//    boolean removeFromStock(List<OrderDetail> orders, List<Item> itemList) throws SQLException, ClassNotFoundException;
 }
 
 

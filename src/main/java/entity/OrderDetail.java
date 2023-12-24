@@ -2,14 +2,29 @@ package entity;
 
 import lombok.*;
 
-@AllArgsConstructor
+import javax.persistence.*;
+
+
 @NoArgsConstructor
+@AllArgsConstructor
 @Setter
 @Getter
 @ToString
+@Entity
 public class OrderDetail {
-    private String orderId;
-    private String itemCode;
+    @EmbeddedId
+    private OrderDetailsKey id;
+
+    @ManyToOne
+    @MapsId("itemCode")
+    @JoinColumn(name = "item_code")
+    Item item;
+
+    @ManyToOne
+    @MapsId("orderId")
+    @JoinColumn(name = "orderId")
+    Orders order;
+
     private int qty;
     private double unitPrice;
 }

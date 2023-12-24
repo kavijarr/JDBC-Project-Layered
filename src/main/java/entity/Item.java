@@ -4,8 +4,12 @@ import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Setter
 @Getter
@@ -17,4 +21,13 @@ public class Item {
     private String description;
     private double unitPrice;
     private int qtyOnHand;
+
+    @OneToMany(mappedBy = "item")
+    List<OrderDetail> orderDetailList = new ArrayList<>();
+    public Item(String code, String description, double unitPrice, int qtyOnHand) {
+        this.code = code;
+        this.description = description;
+        this.unitPrice = unitPrice;
+        this.qtyOnHand = qtyOnHand;
+    }
 }

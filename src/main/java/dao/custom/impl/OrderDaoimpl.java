@@ -81,21 +81,21 @@ public class OrderDaoimpl implements OrderDao {
         return null;
     }
 
-    @Override
-    public boolean removeFromStock(List<OrderDetail> orders, List<Item> itemList) throws SQLException, ClassNotFoundException {
-        String sql = "UPDATE item SET qtyOnHand =? WHERE code =?";
-
-        PreparedStatement pstm = DBConection.getInstance().getConnection().prepareStatement(sql);
-            for (OrderDetail order:orders) {
-                for (Item item:itemList) {
-                    if (order.getItemCode().equals(item.getCode())){
-                        pstm.setInt(1,(item.getQtyOnHand()-order.getQty()));
-                        pstm.setString(2,order.getItemCode());
-                        pstm.executeUpdate();
-                    }
-                }
-            }
-        return true;
-    }
+//    @Override
+//    public boolean removeFromStock(List<OrderDetail> orders, List<Item> itemList) throws SQLException, ClassNotFoundException {
+//        String sql = "UPDATE item SET qtyOnHand =? WHERE code =?";
+//
+//        PreparedStatement pstm = DBConection.getInstance().getConnection().prepareStatement(sql);
+//            for (OrderDetail order:orders) {
+//                for (Item item:itemList) {
+//                    if (order.getItemCode().equals(item.getCode())){
+//                        pstm.setInt(1,(item.getQtyOnHand()-order.getQty()));
+//                        pstm.setString(2,order.getItemCode());
+//                        pstm.executeUpdate();
+//                    }
+//                }
+//            }
+//        return true;
+//    }
 
 }
