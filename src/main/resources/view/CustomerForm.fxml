@@ -47,5 +47,6 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
+      <Button layoutX="714.0" layoutY="665.0" mnemonicParsing="false" onAction="#reportButtonOnAction" prefHeight="37.0" prefWidth="86.0" text="Report" />
    </children>
 </AnchorPane>

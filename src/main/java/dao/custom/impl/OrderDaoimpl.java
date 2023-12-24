@@ -23,18 +23,18 @@ public class OrderDaoimpl implements OrderDao {
 
     OrderDetailsDao orderDetailsDao = DaoFactory.getInstance().getDao(DaoType.ORDER_DETAIL);
     @Override
-    public boolean saveOrder(Orders entity) throws SQLException {
+    public boolean save(Orderdto dto) throws SQLException {
         Connection connection=null;
         try {
             connection = DBConection.getInstance().getConnection();
             connection.setAutoCommit(false);
             String sql = "INSERT INTO orders VALUES(?,?,?)";
             PreparedStatement pstm = connection.prepareStatement(sql);
-            pstm.setString(1, entity.getOrderId());
-            pstm.setString(2, entity.getDate());
-            pstm.setString(3, entity.getCustomerId());
+            pstm.setString(1, dto.getOrderId());
+            pstm.setString(2, dto.getDate());
+            pstm.setString(3, dto.getCustId());
             if (pstm.executeUpdate() > 0) {
-                boolean isDetailSaved = orderDetailsDao.saveOrderDetails(entity.getList());
+                boolean isDetailSaved = orderDetailsDao.saveOrderDetails(dto.getList());
                 if (isDetailSaved) {
                     connection.commit();
                     return true;
@@ -49,14 +49,29 @@ public class OrderDaoimpl implements OrderDao {
     }
 
     @Override
-    public Orders lastOrder() throws SQLException, ClassNotFoundException {
+    public boolean update(Orderdto entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean delete(String value) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public List<Orderdto> getAll() throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public Orderdto lastOrder() throws SQLException, ClassNotFoundException {
         String sql = "SELECT * FROM orders ORDER BY id DESC LIMIT 1";
 //        PreparedStatement pstm = DBConection.getInstance().getConnection().prepareStatement(sql);
 //        ResultSet resultSet = pstm.executeQuery();
         ResultSet resultSet = CrudUtil.execute(sql);
 
         if(resultSet.next()){
-            return new Orders(
+            return new Orderdto(
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),

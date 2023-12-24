@@ -1,5 +1,6 @@
 package dao.custom;
 
+import dao.CrudDao;
 import dao.SuperDao;
 import dto.ItemDto;
 import dto.OrderDetailsDto;
@@ -11,10 +12,9 @@ import entity.Orders;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface OrderDao extends SuperDao {
-    boolean saveOrder(Orders entity) throws SQLException, ClassNotFoundException;
+public interface OrderDao extends CrudDao<Orderdto> {
 
-    Orders lastOrder() throws SQLException, ClassNotFoundException;
+    Orderdto lastOrder() throws SQLException, ClassNotFoundException;
 
     boolean removeFromStock(List<OrderDetail> orders, List<Item> itemList) throws SQLException, ClassNotFoundException;
 }

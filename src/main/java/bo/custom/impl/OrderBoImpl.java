@@ -19,15 +19,29 @@ import java.util.List;
 public class OrderBoImpl implements OrderBo {
 
     OrderDao orderDao = DaoFactory.getInstance().getDao(DaoType.ORDER);
+
     @Override
-    public Orderdto lastOrder() throws SQLException, ClassNotFoundException {
-        Orders entity = orderDao.lastOrder();
-        return new Orderdto(entity.getOrderId(),entity.getDate(),entity.getCustomerId(),null);
+    public String genarateId() throws SQLException, ClassNotFoundException {
+        try {
+            Orderdto dto = orderDao.lastOrder();
+            if(dto!=null) {
+                String id = dto.getOrderId();
+                int num = Integer.parseInt(id.split("[D]")[1]);
+                num++;
+                return (String.format("D%03d",num));
+            }else{
+                return ("D001");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public Boolean saveOrder(Orderdto dto) throws SQLException, ClassNotFoundException {
-        return orderDao.saveOrder(new Orders(dto.getOrderId(),dto.getDate(),dto.getCustId(),null));
+        return orderDao.save(dto);
     }
 
     @Override

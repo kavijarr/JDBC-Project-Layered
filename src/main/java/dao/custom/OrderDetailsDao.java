@@ -8,5 +8,5 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface OrderDetailsDao extends SuperDao {
-    boolean saveOrderDetails(List<OrderDetail> list) throws SQLException, ClassNotFoundException;
+    boolean saveOrderDetails(List<OrderDetailsDto> list) throws SQLException, ClassNotFoundException;
 }

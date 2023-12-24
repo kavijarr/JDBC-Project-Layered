@@ -199,15 +199,7 @@ public class PlaceOrderFormController {
 
     public void genarateID(){
         try {
-            Orderdto dto = orderBo.lastOrder();
-            if(dto!=null) {
-                String id = dto.getOrderId();
-                int num = Integer.parseInt(id.split("[D]")[1]);
-                num++;
-                lblOrderId.setText(String.format("D%03d",num));
-            }else{
-                lblOrderId.setText("D001");
-            }
+            lblOrderId.setText(orderBo.genarateId());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
