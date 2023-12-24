@@ -25,6 +25,6 @@ public class OrderDetail {
     @JoinColumn(name = "orderId")
     Orders order;
 
-    private int qty;
     private double unitPrice;
+    private int qty;
 }

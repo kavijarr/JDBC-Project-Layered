@@ -19,13 +19,13 @@ public class Orders {
     private String date;
 
     @ManyToOne
-    @JoinColumn(name = "customer_Id",nullable = false)
+    @JoinColumn(name = "customer_Id")
     private Customer customer;
 
     @OneToMany(mappedBy = "order")
     List<OrderDetail> orderDetailList = new ArrayList<>();
 
-    public Orders(String orderId, String date, String customerId) {
+    public Orders(String orderId, String date) {
         this.orderId = orderId;
         this.date = date;
     }

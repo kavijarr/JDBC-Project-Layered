@@ -24,8 +24,8 @@ public class ItemDaoImpl implements ItemDao {
             itemList.add(new Item(
                     rslt.getString(1),
                     rslt.getString(2),
-                    rslt.getDouble(3),
-                    rslt.getInt(4)
+                    rslt.getDouble(4),
+                    rslt.getInt(3)
                     ));
         }
         return itemList;
@@ -72,7 +72,7 @@ public class ItemDaoImpl implements ItemDao {
         while (rslt.next()){
             list.add(new Item(rslt.getString(1),
                     rslt.getString(2),
-                    rslt.getDouble(3),
+                    rslt.getInt(3),
                     rslt.getInt(4)));
         }
         return list;
