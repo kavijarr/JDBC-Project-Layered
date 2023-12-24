@@ -1,6 +1,7 @@
 package dao.custom.impl;
 
 import dao.util.CrudUtil;
+import dao.util.HibernateUtil;
 import db.DBConection;
 import dto.CustomerDto;
 import dao.custom.CustomerDao;
@@ -9,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,11 +38,7 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public boolean save(Customer entity) throws SQLException, ClassNotFoundException {
 
-        Configuration configuration = new Configuration().configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Customer.class);
-
-        SessionFactory sessionFactory = configuration.buildSessionFactory();
-        Session session = sessionFactory.openSession();
+        Session session = HibernateUtil.getSession();
         Transaction transaction = session.beginTransaction();
         session.save(entity);
         transaction.commit();
@@ -56,12 +54,7 @@ public class CustomerDaoImpl implements CustomerDao {
     public boolean update(Customer entity) throws SQLException, ClassNotFoundException {
 //        String sql = "UPDATE customer SET name=?,address=?,salary=? WHERE id=?";
 //        return CrudUtil.execute(sql,entity.getName(),entity.getAddress(),entity.getSalary(),entity.getId());
-        Configuration configuration = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Customer.class);
-
-        SessionFactory sessionFactory = configuration.buildSessionFactory();
-        Session session = sessionFactory.openSession();
+        Session session = HibernateUtil.getSession();
 
         Transaction transaction = session.beginTransaction();
         Customer customer = session.find(Customer.class, entity.getId());
@@ -80,11 +73,7 @@ public class CustomerDaoImpl implements CustomerDao {
 //        String sql = "DELETE FROM customer WHERE id=?";
 //        return CrudUtil.execute(sql,value);
 
-        Configuration configuration = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Customer.class);
-        SessionFactory sessionFactory = configuration.buildSessionFactory();
-        Session session = sessionFactory.openSession();
+        Session session = HibernateUtil.getSession();
 
         Transaction transaction = session.beginTransaction();
         session.delete(session.find(Customer.class,value));
@@ -95,19 +84,23 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public List<Customer> getAll() throws SQLException, ClassNotFoundException {
-        String sql = "SELECT * FROM customer";
-            List<Customer> list = new ArrayList<>();
+//        String sql = "SELECT * FROM customer";
+//            List<Customer> list = new ArrayList<>();
 //        PreparedStatement pstm = DBConection.getInstance().getConnection().prepareStatement(sql);
 //        ResultSet resultSet = pstm.executeQuery();
-        ResultSet resultSet = CrudUtil.execute(sql);
-        while(resultSet.next()){
-            list.add(new Customer(
-                    resultSet.getString(1),
-                    resultSet.getString(2),
-                    resultSet.getString(3),
-                    resultSet.getDouble(4)
-            ));
-        }
+        Session session = HibernateUtil.getSession();
+        Query query = session.createQuery("FROM Customer");
+        List<Customer> list = query.list();
+//
+//        ResultSet resultSet = CrudUtil.execute(sql);
+//        while(resultSet.next()){
+//            list.add(new Customer(
+//                    resultSet.getString(1),
+//                    resultSet.getString(2),
+//                    resultSet.getString(3),
+//                    resultSet.getDouble(4)
+//            ));
+//        }
         return list;
     }
 }
