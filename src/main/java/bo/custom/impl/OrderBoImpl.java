@@ -18,7 +18,7 @@ import java.util.List;
 
 public class OrderBoImpl implements OrderBo {
 
-    OrderDao orderDao = DaoFactory.getInstance().getDao(DaoType.ORDER);
+    OrderDao orderDao = DaoFactory.getInstance(). getDao(DaoType.ORDER);
 
     @Override
     public String genarateId() throws SQLException, ClassNotFoundException {
