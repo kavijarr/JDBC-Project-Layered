@@ -12,5 +12,5 @@ public interface CustomerDao extends CrudDao<Customer> {
 //    boolean updateCustomer(CustomerDto dto) throws SQLException, ClassNotFoundException;
 //    boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException;
 //    List<CustomerDto> allCustomers() throws SQLException, ClassNotFoundException;
-    List<Customer> searchCustomer(String id) throws SQLException, ClassNotFoundException;
+    List<Customer> searchCustomer(String value) throws SQLException, ClassNotFoundException;
 }

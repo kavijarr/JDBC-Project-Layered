@@ -56,8 +56,8 @@ public class CustomerBoImpl implements CustomerBo {
     }
 
     @Override
-    public List<CustomerDto> searchCustomer(String id) throws SQLException, ClassNotFoundException {
-        List<Customer> entityList = customerDao.searchCustomer(id);
+    public List<CustomerDto> searchCustomer(String value) throws SQLException, ClassNotFoundException {
+        List<Customer> entityList = customerDao.searchCustomer(value);
         List<CustomerDto> dtoList = new ArrayList();
         for (Customer customer: entityList) {
             dtoList.add(new CustomerDto(
@@ -67,6 +67,7 @@ public class CustomerBoImpl implements CustomerBo {
                     customer.getSalary()
             ));
         }
+        System.out.println(entityList);
         return dtoList;
     }
 }

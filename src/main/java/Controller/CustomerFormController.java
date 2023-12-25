@@ -207,6 +207,7 @@ public class CustomerFormController {
                 tmList.add(c);
             }
             tblCustomer.setItems(tmList);
+            System.out.println(tmList);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {

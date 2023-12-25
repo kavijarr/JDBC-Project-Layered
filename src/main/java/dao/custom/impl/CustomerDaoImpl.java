@@ -21,18 +21,21 @@ import java.util.List;
 public class CustomerDaoImpl implements CustomerDao {
 
     @Override
-    public List<Customer> searchCustomer(String id) throws SQLException, ClassNotFoundException {
-        List<Customer> customerList = new ArrayList<>();
-        String sql = "SELECT * FROM Customer WHERE id LIKE ? '%'";
-        ResultSet rslt = CrudUtil.search(sql,id);
-        while (rslt.next()){
-            customerList.add(new Customer(rslt.getString(1),
-                    rslt.getString(2),
-                    rslt.getString(3),
-                    rslt.getDouble(4)
-            ));
-        }
-        return customerList;
+    public List<Customer> searchCustomer(String value) throws SQLException, ClassNotFoundException {
+//        String sql = "SELECT * FROM Customer WHERE id LIKE ? '%'";
+//        ResultSet rslt = CrudUtil.search(sql,id);
+//        while (rslt.next()){
+//            customerList.add(new Customer(rslt.getString(1),
+//                    rslt.getString(2),
+//                    rslt.getString(3),
+//                    rslt.getDouble(4)
+//            ));
+//        }
+        Session session = HibernateUtil.getSession();
+        Query query = session.createQuery("FROM Customer  WHERE name LIKE '"+value+"%' ");
+        List<Customer> list = query.list();
+        session.close();
+        return list;
     }
 
     @Override
@@ -74,7 +77,6 @@ public class CustomerDaoImpl implements CustomerDao {
 //        return CrudUtil.execute(sql,value);
 
         Session session = HibernateUtil.getSession();
-
         Transaction transaction = session.beginTransaction();
         session.delete(session.find(Customer.class,value));
         transaction.commit();
@@ -91,6 +93,7 @@ public class CustomerDaoImpl implements CustomerDao {
         Session session = HibernateUtil.getSession();
         Query query = session.createQuery("FROM Customer");
         List<Customer> list = query.list();
+        session.close();
 //
 //        ResultSet resultSet = CrudUtil.execute(sql);
 //        while(resultSet.next()){

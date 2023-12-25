@@ -18,7 +18,7 @@ public class ItemBoImpl implements ItemBo {
     @Override
     public List<ItemDto> allItems() throws SQLException, ClassNotFoundException {
         List<ItemDto> dtoList =new ArrayList();
-        List<Item> list = itemDao.allItems();
+        List<Item> list = itemDao.getAll();
 
         for(Item entity: list){
             dtoList.add(new ItemDto(
@@ -33,7 +33,7 @@ public class ItemBoImpl implements ItemBo {
 
     @Override
     public Boolean saveItem(ItemDto dto) throws SQLException, ClassNotFoundException {
-        return itemDao.saveItem(new Item(
+        return itemDao.save(new Item(
                 dto.getCode(),
                 dto.getDesc(),
                 dto.getUnitPrice(),
@@ -43,7 +43,7 @@ public class ItemBoImpl implements ItemBo {
 
     @Override
     public Boolean updateItem(ItemDto dto) throws SQLException, ClassNotFoundException {
-        return itemDao.updateItem(new Item(
+        return itemDao.update(new Item(
                 dto.getCode(),
                 dto.getDesc(),
                 dto.getUnitPrice(),
@@ -53,13 +53,13 @@ public class ItemBoImpl implements ItemBo {
 
     @Override
     public boolean deleteItem(String code) throws SQLException, ClassNotFoundException {
-        return itemDao.deleteItem(code);
+        return itemDao.delete(code);
     }
 
     @Override
-    public List<ItemDto> searchItem(String code) throws SQLException, ClassNotFoundException {
+    public List<ItemDto> searchItem(String value) throws SQLException, ClassNotFoundException {
         List<ItemDto> dtoList = new ArrayList();
-        List<Item> list = itemDao.searchItem(code);
+        List<Item> list = itemDao.searchItem(value);
 
         for(Item entity:list){
             dtoList.add(new ItemDto(

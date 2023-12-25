@@ -12,7 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @Setter
 @Getter
-@ToString
 @Entity
 public class Customer {
     @Id
